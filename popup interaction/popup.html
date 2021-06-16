@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Popup Interaction</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<link rel="stylesheet" href="popup.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="popup.js"></script>
+</head>
+
+<body>
+	<button type="button" class="btn_show">Show Layer</button>
+
+	<!-- [D]
+    - inactive : 
+      1. .layer_wrap에 layer_on 클래스 제거
+      2. .layer_inner에 height 값 변경 (현재 팝업 높이 -> 바뀔 팝업 높이)
+    - active : 
+      1. .layer_wrap에 layer_on 클래스 추가
+      2. .layer_inner에 height 값 변경 (현재 팝업 높이 -> 바뀔 팝업 높이)
+  -->
+	<!-- Layer 1 -->
+	<div class="layer_wrap layer_on">
+		<div class="layer_inner">
+			<div class="layer_header">
+				<h2 class="title">Layer 1</h2>
+				<button type="button" class="btn_close" aria-label="close"></button>
+			</div>
+
+			<div class="layer_content">
+				<p class="txt">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora fuga nulla alias aut maxime et vero corrupti rem ullam nostrum quae, modi sint aliquam inventore deleniti non iusto quam? Unde?</p>
+
+				<div class="box_input">
+					<label for="pw0">Input 1</label>
+					<input type="text" id="pw0" class="input" value="">
+				</div>
+				<div class="box_input">
+					<label for="pw1">Input 2</label>
+					<input type="text" id="pw1" class="input" value="">
+				</div>
+			</div>
+
+			<div class="box_btn">
+				<button type="button" class="btn_sm gray">Back</button>
+				<button type="button" class="btn_sm">Next</button>
+			</div>
+		</div>
+	</div>
+	<!-- [Layer] Passowrd -->
+
+	<!-- [D] layer 2-->
+	<div class="layer_wrap layer_input">
+		<div class="layer_inner">
+			<div class="layer_header">
+				<h2 class="title">Layer2</h2>
+				<button type="button" class="btn_close" aria-label="close"></button>
+			</div>
+
+			<div class="layer_content">
+				<p class="txt">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora fuga nulla alias aut maxime et vero corrupti rem ullam nostrum quae, modi sint aliquam inventore deleniti non iusto quam? Unde?</p>
+
+				<div class="box_input">
+					<label for="pw2">Input 1</label>
+					<input type="text" id="pw2" class="input" value="">
+				</div>
+				<div class="box_input">
+					<label for="pw3">Input 2</label>
+					<input type="text" id="pw3" class="input" value="">
+				</div>
+				<div class="box_input">
+					<label for="pw4">Input 3</label>
+					<input type="text" id="pw4" class="input" value="">
+				</div>
+				<div class="box_input">
+					<label for="pw5">Input 4</label>
+					<input type="text" id="pw5" class="input" value="">
+				</div>
+			</div>
+
+			<div class="box_btn">
+				<button type="button" class="btn_sm gray">Back</button>
+				<button type="button" class="btn_sm">Next</button>
+			</div>
+		</div>
+	</div>
+	
+
+	<!-- Layer3 -->
+	<div class="layer_wrap">
+		<div class="layer_inner">
+			<div class="layer_header">
+				<h2 class="title">Layer3</h2>
+				<button type="button" class="btn_close" aria-label="close"></button>
+			</div>
+
+			<div class="layer_content">
+				<div class="box_input">
+					<label for="pw6">Input 1</label>
+					<input type="text" id="pw6" class="input" value="">
+				</div>
+				<div class="box_input">
+					<label for="pw7">Input 2</label>
+					<input type="text" id="pw7" class="input" value="">
+				</div>
+			</div>
+
+			<div class="box_btn">
+				<button type="button" class="btn_sm gray">Back</button>
+				<button type="button" class="btn_sm">Confirm</button>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

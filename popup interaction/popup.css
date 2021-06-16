@@ -1,0 +1,249 @@
+@charset "utf-8";
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-focus-ring-color: rgba(0, 0, 0, 0);
+}
+
+*:not(input):not(textarea) {
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, legend, input, textarea, button, select {
+  margin: 0;
+  padding: 0;
+}
+
+body, input, textarea, select, button, table {
+  outline: none !important;
+}
+
+/*
+  100vh를 추가한 이유:
+  노치단말에서 WKWebview(라인메신저 내에 브라우저들 IAB, LIFF 등)의 랜더링이 %일 경우 하단에 여백이 생기는 문제 해결을 위함
+*/
+html, body {
+  height: 100%;
+  height: 100vh;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  -webkit-overflow-scrolling: touch;
+  user-select: none;
+  background-color: #fff;
+}
+
+article, aside, dialog, footer, header, section, nav, figure, main {
+  display: block
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+em, address {
+  font-style: normal;
+}
+
+img, fieldset {
+  border: 0;
+}
+
+fieldset {
+  min-width: 0;
+}
+
+ul, ol, dl {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  line-height: normal;
+}
+
+button {
+  -webkit-appearance: none;
+  border: 0 none transparent;
+  background: transparent;
+  cursor: pointer;
+}
+
+input {
+  -webkit-appearance: none;
+  border-radius: none;
+}
+
+select{
+  border: 0;
+}
+
+/* Button */
+.btn_show {
+  display: block;
+  margin: 20px auto;
+  padding: 15px 10px;
+  width: 300px;
+  font-size: 16px;
+  font-weight: 700;
+  color:darkmagenta;
+  border-radius: 10px;
+  background-color: lavender;
+  box-sizing: border-box;
+}
+
+/* 
+  Popup 
+*/
+.layer_wrap {
+  opacity: 0;
+  position: relative;
+  z-index: -1;
+}
+.layer_wrap:before {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,.3);   
+  content: '';
+}
+.layer_inner {
+  opacity: 0;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  transform:translate(-50%, -50%);
+  width: 700px;
+  padding: 50px 0;
+  border-radius: 15px;
+  background: #fff;
+  box-sizing: border-box;
+  transition: all ease .05s -.1s;
+}
+.layer_inner > * {
+  opacity: 0;
+  transition: all ease .03s;
+}
+.layer_header {
+  position: relative;
+  padding: 0 50px 20px;
+  box-sizing: border-box;
+}
+.layer_header .title {
+  display: inline-block;
+  font-size: 30px;
+  font-weight: 700;
+  vertical-align: top;
+}
+.layer_header >.btn_close {
+  position: absolute;
+  top: -25px;
+  right: 20px;
+  padding: 10px;
+}
+.layer_header >.btn_close:before {
+  display: block;
+  content: 'close';
+}
+.layer_content {
+  padding: 20px 50px;
+  box-sizing: border-box;
+}
+.layer_content .title_sub {
+  font-size: 16px;
+}
+.layer_content .title_sm {
+  font-size: 14px;
+  color: #333;
+}
+.layer_content .txt {
+  font-size: 14px;
+  color: #333;
+}
+.layer_content .txt:not(:first-child) {
+  margin-top: 10px;
+}
+.layer_content .box_input:not(:first-child):nth-of-type(1) {
+  margin-top: 40px;
+}
+.layer_content .box_input:not(:nth-of-type(1)) {
+  margin-top: 20px;
+}
+.layer_content label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+}
+.layer_content input {
+  width: 100%;
+  height: 50px;
+  padding: 0 10px;
+  font-size: 15px;
+  border-radius: 5px;
+  border: 1px solid #eaeaea;
+  box-sizing: border-box;
+}
+.box_btn {
+  padding: 20px 60px 0;
+  text-align: center;
+  box-sizing: border-box;
+}
+.btn_sm {
+  display: inline-block;
+  position: relative;
+  min-width: 150px;
+  padding: 15px 10px;
+  font-weight: 700;
+  vertical-align: top;
+  border-radius: 5px;
+  background-color: lightskyblue;
+}
+.btn_sm:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background-color: rgba(255,255,255,.15);
+  content: '';
+}
+.btn_sm:not(:first-of-type){
+  margin-left: 10px;
+}
+.btn_sm:active {
+  position: relative;
+  transition: all ease .2s;
+}
+.btn_sm.gray {
+  background-color: #e9e9e9;
+}
+
+/* layer on */
+.layer_on {
+  opacity: 1;
+  z-index: 20;
+}
+.layer_on .layer_inner,
+.layer_on .layer_inner > * {
+  opacity: 1;
+}
